@@ -9,6 +9,9 @@ services:
     volumes:
       - ./backend:/usr/src/app
     env_file: ./backend/.env
+    depends_on:
+      - db
+
   frontend:
     container_name: loja_frontend
     build:
@@ -29,7 +32,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD_TEST}
     volumes:
       - mysql_test:/var/lib/mysql
-      - mysql_config_test:/etc/mysql    
+      - mysql_config_test:/etc/mysql
   db:
     image: mysql:8.0
     container_name: loja_db_test
