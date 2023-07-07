@@ -4,6 +4,7 @@ function validateEnv() {
   cleanEnv(process.env, {
     PORT: port(),
     NODE_ENV: str(),
+      SALT_SOUND:
   });
 }
 
