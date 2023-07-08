@@ -45,8 +45,6 @@ const update = async (req: Request, res: Response) => {
         res.status(500).send(error);
     }
 };
-
-const remove = async (req: Request, res: Response) => {
-};
+const remove = async (req: Request, res: Response) => {};
 
 export default { index, create, read, update, remove };
